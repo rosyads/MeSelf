@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MeSelf</string>
+    <string name="motto">One Who Won\'t Betray</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nama">Rosyad Sulaiman</string>
+    <string name="status">10116349 \nIF 8 \nUnikom</string>
+    <string name="tentang">I love music and video game, I like games that are challenging. I also like making apps when I need to make one. I hope all of my skills and knowledge will be useful in the future.</string>
+    <string name="interst"> Interested In</string>
+    <string name="game">Games</string>
+    <string name="science">Science</string>
+    <string name="anime">Anime</string>
+    <string name="galleryTitle">Title</string>
+    <string name="nomor">+6283820096565</string>
+    <string name="email">rosyadsulaiman@gmail.com</string>
+    <string name="ket_about1">This Application is for Education Purposes Only</string>
+    <string name="ket_about2">Version 1.0.0</string>
+    <string name="delete">Delete</string>
+    <string name="edit">EDIT</string>
+    <string name="tambah">Tambah</string>
+    <string name="info">Info :</string>
+    <string name="name">Nama :</string>
+    <string name="tutup">Tutup</string>
+    <string name="editBtn">Edit</string>
+</resources>
