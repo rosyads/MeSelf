@@ -9,6 +9,7 @@ package com.rosyads.meself;
 
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -18,6 +19,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -61,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_friend:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FriendFragment()).commit();
+                break;
+            case R.id.nav_logout:
+                Toast.makeText(MainActivity.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+                Intent s = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(s);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

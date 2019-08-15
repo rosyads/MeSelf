@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_splash">
+    android:background="@drawable/bg_friend">
     <LinearLayout
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="188dp"
             android:layout_height="255dp"
-            android:src="@drawable/logo_myne" />
+            android:src="@drawable/logo_meself" />
 
     </LinearLayout>
 

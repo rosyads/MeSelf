@@ -9,9 +9,8 @@ package com.rosyads.meself.model;
 
  */
 
-public class FriendModel {
-
-    private String Title,Info;
+public class FriendModel{
+    private String Title, Info;
     private int Thumbnail;
 
     public FriendModel() {

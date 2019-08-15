@@ -9,6 +9,7 @@ package com.rosyads.meself;
 
  */
 
+import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.rosyads.meself.adapter.FriendAdapter;
+import com.rosyads.meself.model.AppDatabase;
 import com.rosyads.meself.model.FriendModel;
 
 import java.util.ArrayList;

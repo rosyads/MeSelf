@@ -129,7 +129,7 @@ public class SlideActivity extends AppCompatActivity {
                 mNextBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(SlideActivity.this,MainActivity.class));
+                        startActivity(new Intent(SlideActivity.this, LoginActivity.class));
                         mNextBtn.setSaveEnabled(false);
                     }
                 });

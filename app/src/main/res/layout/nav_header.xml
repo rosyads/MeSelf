@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:background="@drawable/bg_profile"
+    android:background="@drawable/bg_friend"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
@@ -12,7 +12,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:src="@drawable/logo_myne"
+        android:src="@drawable/logo_meself"
         android:layout_marginLeft="8dp" />
 
     <TextView
