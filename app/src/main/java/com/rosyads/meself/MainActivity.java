@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
                 break;
             case R.id.nav_friend:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FriendFragment()).commit();
+                Intent a = new Intent(getApplicationContext(), FriendActivity.class);
+                startActivity(a);
                 break;
             case R.id.nav_logout:
                 Toast.makeText(MainActivity.this,"Logout Successful", Toast.LENGTH_SHORT).show();

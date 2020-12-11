@@ -46,7 +46,7 @@ public class SlideAdapter extends PagerAdapter {
     };
 
     public String[] slide_desc = {
-            "This Myne Application was built to finish my midterm test, please enjoy",
+            "MeSelf Application was built for my final exam,  please enjoy",
             "Try Everything that My Aplication can Offers",
             "So, What are You Waiting For? \nLet's Go!!"
 

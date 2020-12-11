@@ -9,68 +9,82 @@ package com.rosyads.meself.adapter;
 
  */
 
-
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rosyads.meself.R;
-import com.rosyads.meself.model.FriendModel;
+import com.rosyads.meself.model.Friend;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.MyViewHolder> {
-
-    private Context mContext;
-    private List<FriendModel> mData;
-
-    public FriendAdapter(Context mContext, List<FriendModel> mData) {
-        this.mContext = mContext;
-        this.mData = mData;
-    }
+public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendHolder> {
+    private List<Friend> friends = new ArrayList<>();
+    private OnItemClickListener listener;
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
-        View view;
-        LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.cardview_item_friend,viewGroup,false);
-
-
-        return new MyViewHolder(view);
+    public FriendHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View itemView = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.friend_item, viewGroup, false);
+        return new FriendHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int position) {
-
-        myViewHolder.tv_friend_title.setText(mData.get(position).getTitle());
-        myViewHolder.tv_friend_desc.setText(mData.get(position).getInfo());
-        myViewHolder.img_friend_thumbnail.setImageResource(mData.get(position).getThumbnail());
-
+    public void onBindViewHolder(@NonNull FriendHolder friendHolder, int i) {
+        Friend currentFriend = friends.get(i);
+        friendHolder.textViewTitle.setText(currentFriend.getTitle());
+        friendHolder.textViewDescription.setText(currentFriend.getDescription());
+        friendHolder.textViewPriority.setText(String.valueOf(currentFriend.getPriority()));
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return friends.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public void setFriends(List<Friend> friends){
+        this.friends = friends;
+        notifyDataSetChanged();
+    }
 
-        TextView tv_friend_title, tv_friend_desc;
-        ImageView img_friend_thumbnail;
+    public Friend getFriendAt(int position){
+        return friends.get(position);
+    }
 
-        public MyViewHolder(@NonNull View itemView) {
+    class FriendHolder extends RecyclerView.ViewHolder{
+        private TextView textViewTitle;
+        private TextView textViewDescription;
+        private TextView textViewPriority;
+
+        public FriendHolder(@NonNull View itemView) {
             super(itemView);
+            textViewTitle = itemView.findViewById(R.id.text_view_title);
+            textViewDescription = itemView.findViewById(R.id.text_view_description);
+            textViewPriority = itemView.findViewById(R.id.text_view_priority);
 
-            tv_friend_title = (TextView) itemView.findViewById(R.id.friend_title_id);
-            tv_friend_desc = (TextView) itemView.findViewById(R.id.friend_desc_id);
-            img_friend_thumbnail = (ImageView) itemView.findViewById(R.id.friend_img_id);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if(listener != null && position != RecyclerView.NO_POSITION){
+                        listener.onItemClick(friends.get(position));
+                    }
+
+                }
+            });
         }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(Friend friend);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
     }
 }
