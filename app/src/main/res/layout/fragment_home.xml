@@ -10,6 +10,10 @@
         android:layout_height="210dp"
         android:background="@drawable/bg_gradien_home" />
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
         <LinearLayout
             android:id="@+id/home_main_info"
             android:layout_width="match_parent"
@@ -21,7 +25,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:padding="16dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="150dp"
@@ -93,10 +98,11 @@
                         app:contentPaddingTop="15dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:layout_gravity="center">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -123,15 +129,13 @@
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:layout_marginStart="55dp"
-                                    android:src="@drawable/ic_science"
-                                    android:layout_marginLeft="55dp" />
+                                    android:src="@drawable/ic_science" />
 
                                 <ImageView
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:layout_marginStart="45dp"
-                                    android:src="@drawable/ic_anime"
-                                    android:layout_marginLeft="45dp" />
+                                    android:src="@drawable/ic_anime" />
 
 
                             </LinearLayout>
@@ -182,7 +186,7 @@
 
         </LinearLayout>
 
-
+    </ScrollView>
 
 
 </RelativeLayout>

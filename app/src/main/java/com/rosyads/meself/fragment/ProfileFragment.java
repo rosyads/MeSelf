@@ -1,4 +1,4 @@
-package com.rosyads.meself;
+package com.rosyads.meself.fragment;
 /*
     Nama       : Rosyad Sulaiman
     NIM        : 10116349
@@ -19,6 +19,8 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.rosyads.meself.R;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
